@@ -1,37 +1,41 @@
 .container {
-  background-color: #252525;
-  color: #ffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  margin-bottom: 100px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px;
 }
 
 .menuIcon {
   display: none;
-  /* Ocultar el icono de menú en pantallas grandes */
+}
+.menuIcon div {
+  display: flex;
   cursor: pointer;
+  flex-direction: column;
+  width: 25px;
 }
 
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
+  background-color: var(--text-color);
+  margin: 3px 0;
   transition: 0.4s;
 }
 
-.open .bar:nth-child(1) {
+.menuIcon.open .bar:nth-child(1) {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.open .bar:nth-child(2) {
+.menuIcon.open .bar:nth-child(2) {
   opacity: 0;
 }
 
-.open .bar:nth-child(3) {
+.menuIcon.open .bar:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
@@ -41,6 +45,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .darkMode {
   display: flex;
   cursor: pointer;
@@ -50,9 +55,11 @@
   display: flex;
   gap: 15px;
 }
+
 .navigation div {
   cursor: pointer;
 }
+
 .navigation div.selected,
 .navigation div:hover {
   text-decoration: underline;
@@ -66,54 +73,47 @@
   gap: 10px;
 }
 
+@media (max-width: 578px) {
+  .menuIcon {
+    display: block;
+    padding: 20px;
+    height: 70px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-bottom: 60px;
+    z-index: 1001;
+  }
 
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
   .container {
     flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
     height: 100%;
-    width: 250px;
-    padding-top: 50px;
+    width: 200px;
+    top: 70px;
     transform: translateX(-100%);
     z-index: 1000;
-    transition: transform 0.3s ease-in-out;
   }
 
   .menuOpen {
     transform: translateX(0);
-  }
-
-  .menuIcon {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1100;
+    transition: transform 0.3s ease-in-out;
   }
 
   .content {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 20px;
+    padding: 20px 0;
   }
 
   .navigation {
     flex-direction: column;
     gap: 20px;
-    padding-left: 20px;
     margin-top: 20px;
   }
 
-  .navigation-item {
-    padding: 10px 0;
-  }
-
   .profile {
-    margin-top: auto;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    gap: 50px;
   }
 }

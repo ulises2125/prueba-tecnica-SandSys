@@ -1,27 +1,28 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 16px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
 }
 .grilla {
   display: grid;
-  grid-template-columns: 300px 300px ;
+  grid-template-columns: 300px 300px;
   gap: 16px;
 }
 .interest {
   border-radius: 20px;
-  background-color: black;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 300px;
-  color: #ffff;
+  color: var(--text-color);
   padding: 10px;
+  border: 1px solid var(--border-color);
 }
 
-
 @media (max-width: 768px) {
-    .grilla {
-        grid-template-columns: 300px;
-    }
+  .grilla {
+    grid-template-columns: 300px;
+  }
 }

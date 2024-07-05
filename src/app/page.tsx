@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./aboutme.module.css";
+import SvgAboutComponent from "./components/svg/about-svg";
 
 const AboutMe = () => {
   return (
@@ -20,13 +21,7 @@ const AboutMe = () => {
         </p>
       </div>
       <div className={styles.imageContainer}>
-        <Image
-          src="./about-photo.svg"
-          layout="responsive"
-          height="600"
-          width="600"
-          alt="about photo"
-        />
+        <SvgAboutComponent width="600" height="600" fill="var(--img-color)" />
       </div>
     </div>
   );
