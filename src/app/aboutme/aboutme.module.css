@@ -1,0 +1,65 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px
+}
+.aboutText{
+    width: 100%;
+    max-width: 600px;
+}
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    animation: typing 3.5s steps(30, end);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+.imageContainer {
+    width: 100%;
+    max-width: 600px;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    min-height: 200px;
+}
+
+@media (max-width: 1300px) {
+    .container {
+        display: flex;
+            flex-direction: column;
+    }
+}
+@media (max-width: 578px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}
